@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lite Interval Timer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="activeTime_label">Active</string>
+    <string name="restTime_label">Rest</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_pause">Pause</string>
+    <string name="btn_stop">Stop</string>
+    <string name="btn_resume">Resume</string>
+    <string name="setCount">SET %1$d!</string>
+</resources>

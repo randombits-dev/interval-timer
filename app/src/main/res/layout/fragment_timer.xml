@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              tools:context=".TimerFragment"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:id="@+id/timerLayout">
+
+    <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/status" android:textAlignment="center"/>
+    <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/setCount" android:textAlignment="center"/>
+    <TextView
+            android:id="@+id/timeLeft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="0"
+            android:textColor="@android:color/black"
+            android:textSize="36sp"
+            android:textAlignment="center"/>
+    <Button
+            android:text="@string/btn_pause"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/pauseBtn"/>
+    <Button
+            android:text="@string/btn_resume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/resumeBtn" android:visibility="gone"/>
+    <Button
+            android:text="@string/btn_stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/stopBtn"/>
+
+</LinearLayout>
