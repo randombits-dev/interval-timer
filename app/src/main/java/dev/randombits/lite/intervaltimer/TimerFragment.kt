@@ -41,7 +41,7 @@ class TimerFragment : Fragment() {
     override fun onPause() {
         super.onPause()
         mainActivity!!.window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        pauseTimer()
+        pauseTimer();
     }
 
     override fun onCreateView(
@@ -65,8 +65,12 @@ class TimerFragment : Fragment() {
             }
 
             override fun onStatusChange(status: TimerStatus, set: Int) {
-                if (status != TimerStatus.START) {
-                    // mainActivity!!.soundAlarm();
+                if (status === TimerStatus.ACTIVE) {
+                    view.setBackgroundColor(resources.getColor(R.color.activeBg));
+                } else if (status === TimerStatus.REST) {
+                    view.setBackgroundColor(resources.getColor(R.color.restBg));
+                } else {
+                    view.setBackgroundColor(resources.getColor(R.color.startBg));
                 }
 
                 statusTextView.text = status.toString();
@@ -90,6 +94,7 @@ class TimerFragment : Fragment() {
 
     private fun pauseTimer() {
         timer!!.pause();
+        mainActivity!!.cancelAlarm();
         requireView().findViewById<View>(R.id.resumeBtn).isVisible = true;
         requireView().findViewById<View>(R.id.pauseBtn).isVisible = false;
     }

@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     private var alarmSound = 0
     private var settingsFrag: Fragment? = null;
     private var timerFrag: Fragment? = null;
-    private var playingSound = false;
+    private var playingSound = 0;
 
     val attributes = AudioAttributes.Builder()
         .setUsage(AudioAttributes.USAGE_MEDIA)
@@ -70,17 +70,22 @@ class MainActivity : AppCompatActivity() {
         prefs.apply();
     }
 
-    fun soundAlarm() {
-        if (playingSound) {
+    fun cancelAlarm() {
+        if (playingSound == 0) {
             return;
         }
-        System.out.println("Playing sound");
-        soundPool.play(alarmSound, 1f, 1f, 1, 0, 1f);
-        System.out.println("done Playing sound");
+        soundPool.stop(playingSound);
+        playingSound = 0;
+    }
 
-        playingSound = true;
+    fun soundAlarm() {
+        if (playingSound > 0) {
+            return;
+        }
+        playingSound = soundPool.play(alarmSound, 1f, 1f, 1, 0, 1f);
+
         Handler(Looper.getMainLooper()).postDelayed(
-            { playingSound = false },
+            { playingSound = 0 },
             3000
         )
     }

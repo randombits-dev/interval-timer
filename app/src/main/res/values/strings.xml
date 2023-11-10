@@ -8,5 +8,5 @@
     <string name="btn_pause">Pause</string>
     <string name="btn_stop">Stop</string>
     <string name="btn_resume">Resume</string>
-    <string name="setCount">SET %1$d!</string>
+    <string name="setCount">SET %1$d</string>
 </resources>
