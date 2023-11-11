@@ -3,7 +3,7 @@ package dev.randombits.lite.intervaltimer
 import android.os.CountDownTimer
 
 enum class TimerStatus {
-    START,
+    PREPARE,
     ACTIVE,
     REST
 }
@@ -11,7 +11,7 @@ enum class TimerStatus {
 abstract class HiitTimer(val activeTime: Int, val restTime: Int) {
 
     private var set: Int = 0;
-    private var status: TimerStatus = TimerStatus.START;
+    private var status: TimerStatus = TimerStatus.PREPARE;
     private var timer: CountDownTimer? = null;
     private var remainingTime: Long = 0;
 
@@ -19,7 +19,7 @@ abstract class HiitTimer(val activeTime: Int, val restTime: Int) {
     public abstract fun onStatusChange(status: TimerStatus, set: Int);
 
     public fun start() {
-        status = TimerStatus.START;
+        status = TimerStatus.PREPARE;
         onStatusChange(status, set);
         timer = object : CountDownTimer(3 * 1000, 50) {
             override fun onTick(millisRemaining: Long) {
@@ -39,7 +39,7 @@ abstract class HiitTimer(val activeTime: Int, val restTime: Int) {
 
     public fun resume() {
         when (status) {
-            TimerStatus.START -> start();
+            TimerStatus.PREPARE -> start();
             TimerStatus.ACTIVE -> startActive();
             TimerStatus.REST -> start();
         }

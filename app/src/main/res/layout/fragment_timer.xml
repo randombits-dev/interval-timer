@@ -7,26 +7,37 @@
               android:layout_height="match_parent" android:gravity="center_vertical" android:id="@+id/timerLayout">
 
     <TextView
-            android:text=""
-            android:textSize="36sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/status" android:textAlignment="center"/>
-    <TextView
-            android:text=""
+            android:fontFamily="monospace"
+            android:text="@string/set"
             android:textSize="24sp"
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content" android:textAlignment="center"/>
+
+    <TextView
+            android:fontFamily="monospace"
+            android:text="1"
+            android:textSize="64sp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/setCount" android:textAlignment="center"/>
+
+    <TextView
+            android:fontFamily="@font/suez_one"
+            android:text=""
+            android:textSize="65sp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+
+            android:layout_height="wrap_content" android:id="@+id/status" android:textAlignment="center"/>
+
     <TextView
             android:id="@+id/timeLeft"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="28dp"
             android:fontFamily="monospace"
             android:text="0"
-            android:textColor="@android:color/black"
-            android:textSize="130sp"
+            android:textSize="150sp"
             android:textAlignment="center" android:textStyle="bold"/>
 
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -37,18 +48,15 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:backgroundTint="@color/pauseBtn"
-                android:background="@drawable/pause_circle_100"/>
+                android:background="@drawable/pause_circle_120"/>
 
         <Button
                 android:id="@+id/resumeBtn"
                 android:visibility="gone"
-                android:layout_marginStart="30dp"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:backgroundTint="@color/actionBtn"
-                android:background="@drawable/play_circle_100"/>
+                android:background="@drawable/play_circle_120"/>
 
         <Button
                 android:id="@+id/stopBtn"
@@ -56,8 +64,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:backgroundTint="@color/stopBtn"
-                android:background="@drawable/stop_circle_100"/>
+                android:background="@drawable/stop_circle_120"/>
     </LinearLayout>
 
 </LinearLayout>

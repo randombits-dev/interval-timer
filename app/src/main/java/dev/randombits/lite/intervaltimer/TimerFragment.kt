@@ -66,17 +66,21 @@ class TimerFragment : Fragment() {
 
             override fun onStatusChange(status: TimerStatus, set: Int) {
                 if (status === TimerStatus.ACTIVE) {
-                    view.setBackgroundColor(resources.getColor(R.color.activeBg));
+//                    view.setBackgroundColor(resources.getColor(R.color.activeBg));
+                    statusTextView.setTextColor(resources.getColor(R.color.activeBg));
                 } else if (status === TimerStatus.REST) {
-                    view.setBackgroundColor(resources.getColor(R.color.restBg));
+//                    view.setBackgroundColor(resources.getColor(R.color.restBg));
+                    statusTextView.setTextColor(resources.getColor(R.color.restBg));
                 } else {
-                    view.setBackgroundColor(resources.getColor(R.color.startBg));
+//                    view.setBackgroundColor(resources.getColor(R.color.startBg));
+                    statusTextView.setTextColor(resources.getColor(R.color.text));
                 }
 
                 statusTextView.text = status.toString();
 
                 if (set > 0) {
                     setCountView.text = getString(R.string.setCount, set);
+
                 }
             }
         };
