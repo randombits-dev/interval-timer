@@ -2,8 +2,6 @@
     <string name="app_name">Fat-Free Interval Timer</string>
     <string name="fat_free">Fat-Free</string>
     <string name="app_title">Interval Timer</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="activeTime_label">Active</string>
     <string name="restTime_label">Rest</string>
     <string name="btn_start">Prepare</string>

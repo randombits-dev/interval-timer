@@ -1,4 +1,4 @@
-package dev.randombits.lite.intervaltimer
+package dev.randombits.ff.intervaltimer
 
 import android.media.AudioAttributes
 import android.media.SoundPool
@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import dev.randombits.ff.intervaltimer.R
 
 
 class MainActivity : AppCompatActivity() {

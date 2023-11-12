@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "dev.randombits.lite.intervaltimer"
+    namespace = "dev.randombits.ff.intervaltimer"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "dev.randombits.lite.intervaltimer"
+        applicationId = "dev.randombits.ff.intervaltimer"
         minSdk = 24
         targetSdk = 33
         versionCode = 1

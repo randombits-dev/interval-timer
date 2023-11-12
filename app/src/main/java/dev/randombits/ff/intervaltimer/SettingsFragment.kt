@@ -1,4 +1,4 @@
-package dev.randombits.lite.intervaltimer
+package dev.randombits.ff.intervaltimer
 
 import android.content.Context
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import dev.randombits.ff.intervaltimer.R
 
 private const val ARG_PARAM1 = "active";
 private const val ARG_PARAM2 = "rest"
@@ -83,7 +84,7 @@ class SettingsFragment : Fragment() {
             }
         }
 
-        view.findViewById<View>(R.id.restTime_less).setOnClickListener({
+        view.findViewById<View>(R.id.restTime_less).setOnClickListener {
             val activeTime = restInput!!.text.toString();
             if (activeTime.isBlank()) {
                 restInput!!.setText("45");
@@ -93,15 +94,15 @@ class SettingsFragment : Fragment() {
                 }
             }
 
-        })
-        view.findViewById<View>(R.id.restTime_more).setOnClickListener({
+        }
+        view.findViewById<View>(R.id.restTime_more).setOnClickListener {
             val activeTime = restInput!!.text.toString();
             if (activeTime.isBlank()) {
                 restInput!!.setText("45");
             } else {
                 restInput!!.setText((Integer.parseInt(activeTime) + 5).toString());
             }
-        })
+        }
 
         view.findViewById<View>(R.id.beginBtn).setOnClickListener { startTimer() }
         return view;

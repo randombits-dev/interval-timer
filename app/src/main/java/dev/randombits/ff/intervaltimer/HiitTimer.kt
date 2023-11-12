@@ -1,4 +1,4 @@
-package dev.randombits.lite.intervaltimer
+package dev.randombits.ff.intervaltimer
 
 import android.os.CountDownTimer
 
