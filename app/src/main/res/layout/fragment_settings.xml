@@ -7,19 +7,19 @@
               android:layout_height="match_parent" android:id="@+id/settingsLayout"
               android:gravity="center_vertical">
     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAlignment="center"
-              android:text="@string/fat_free" android:textSize="24sp" android:fontFamily="@font/suez_one"
+              android:text="@string/fat_free" android:textSize="24sp" android:fontFamily="monospace"
               android:textAllCaps="true"
               android:lines="1"/>
 
     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textAlignment="center"
-              android:text="@string/app_title" android:textSize="36sp" android:fontFamily="@font/suez_one"
+              android:text="@string/app_title" android:textSize="36sp" android:fontFamily="monospace"
               android:lines="1" android:layout_marginBottom="30dp"/>
 
     <TextView
             android:text="@string/activeTime_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/activeTimeLabel" android:textAlignment="center"
-            android:textSize="20sp" android:fontFamily="@font/suez_one"/>
+            android:textSize="20sp" android:fontFamily="monospace" android:textStyle="bold"/>
     <!--    <include layout="@layout/fragment_number_control" android:id="@+id/testNUmberControl" android:initialValue="33"/>-->
     <LinearLayout
             android:layout_width="200dp"
@@ -42,7 +42,7 @@
                 android:textAlignment="center"
                 android:inputType="number"
                 android:text="" android:maxLength="4" android:maxWidth="10dp"
-                android:layout_gravity="center|center_horizontal" android:fontFamily="@font/suez_one"/>
+                android:layout_gravity="center|center_horizontal" android:fontFamily="monospace"/>
 
         <ImageButton
                 android:id="@+id/activeTime_more"
@@ -55,7 +55,8 @@
             android:text="@string/restTime_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/restTimeLabel" android:textAlignment="center"
-            android:textSize="20sp" android:layout_marginTop="20dp" android:fontFamily="@font/suez_one"/>
+            android:textSize="20sp" android:layout_marginTop="20dp" android:fontFamily="monospace"
+            android:textStyle="bold"/>
     <LinearLayout
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -75,7 +76,7 @@
                 android:layout_weight="1"
                 android:textAlignment="center"
                 android:inputType="number"
-                android:text="" android:maxLength="4" android:maxWidth="10dp" android:fontFamily="@font/suez_one"/>
+                android:text="" android:maxLength="4" android:maxWidth="10dp" android:fontFamily="monospace"/>
 
         <ImageButton
                 android:id="@+id/restTime_more"

@@ -21,12 +21,12 @@
             android:layout_height="wrap_content" android:id="@+id/setCount" android:textAlignment="center"/>
 
     <TextView
-            android:fontFamily="@font/suez_one"
+            android:fontFamily="monospace"
             android:text=""
             android:textSize="65sp"
             android:layout_width="match_parent"
             android:layout_marginTop="20dp"
-
+            android:textStyle="bold"
             android:layout_height="wrap_content" android:id="@+id/status" android:textAlignment="center"/>
 
     <TextView

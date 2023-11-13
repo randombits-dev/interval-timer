@@ -21,7 +21,7 @@ abstract class HiitTimer(val activeTime: Int, val restTime: Int) {
     public fun start() {
         status = TimerStatus.PREPARE;
         onStatusChange(status, set);
-        timer = object : CountDownTimer(3 * 1000, 50) {
+        timer = object : CountDownTimer(5 * 1000, 50) {
             override fun onTick(millisRemaining: Long) {
                 onUpdate(millisRemaining);
             }
