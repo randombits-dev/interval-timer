@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Fat-Free Interval Timer"
+rootProject.name = "Interval Timer"
 include(":app")

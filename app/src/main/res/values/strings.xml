@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Fat-Free Interval Timer</string>
-    <string name="fat_free">fat-free</string>
+    <string name="app_name">Interval Timer</string>
     <string name="app_title">Interval Timer</string>
     <string name="activeTime_label">Active</string>
     <string name="restTime_label">Rest</string>
