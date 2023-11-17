@@ -1,0 +1,1 @@
+The simplest interval timer you can imagine.

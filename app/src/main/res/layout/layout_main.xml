@@ -5,7 +5,7 @@
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
                                                    android:background="@android:color/white"
-                                                   tools:context="dev.randombits.ff.intervaltimer.MainActivity">
+                                                   tools:context="dev.randombits.intervaltimer.MainActivity">
 
     <FrameLayout
             android:id="@+id/mainFrame"

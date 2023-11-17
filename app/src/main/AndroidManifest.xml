@@ -13,7 +13,7 @@
             android:theme="@style/AppTheme"
             tools:targetApi="31">
         <activity
-                android:name="dev.randombits.ff.intervaltimer.MainActivity"
+                android:name="dev.randombits.intervaltimer.MainActivity"
                 android:exported="true"
                 android:theme="@style/AppTheme">
             <intent-filter>

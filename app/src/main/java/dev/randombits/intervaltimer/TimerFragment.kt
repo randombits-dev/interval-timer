@@ -1,4 +1,4 @@
-package dev.randombits.ff.intervaltimer
+package dev.randombits.intervaltimer
 
 import android.content.Context
 import android.os.Bundle
@@ -9,7 +9,6 @@ import android.view.WindowManager
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import dev.randombits.ff.intervaltimer.R
 
 private const val ARG_PARAM1 = "active";
 private const val ARG_PARAM2 = "rest"
