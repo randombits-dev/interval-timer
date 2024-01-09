@@ -7,12 +7,23 @@ android {
     namespace = "dev.randombits.intervaltimer"
     compileSdk = 33
 
+    signingConfigs {
+        create("release") {
+            if (findProperty("PLAY_STORE_KEY") != null) {
+                storeFile = file(findProperty("PLAY_STORE_KEY") as String)
+                storePassword = findProperty("PLAY_STORE_PASSWORD") as String?
+                keyAlias = findProperty("PLAY_STORE_KEY_ALIAS") as String?
+                keyPassword = findProperty("PLAY_STORE_KEY_PASSWORD") as String?
+            }
+        }
+    }
+
     defaultConfig {
         applicationId = "dev.randombits.intervaltimer"
         minSdk = 24
         targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 3
+        versionName = "1.0.2"
 
         vectorDrawables {
             useSupportLibrary = true
@@ -21,8 +32,11 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            if (findProperty("PLAY_STORE_KEY") != null) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
     }
     compileOptions {

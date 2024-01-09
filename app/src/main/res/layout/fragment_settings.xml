@@ -23,6 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/minus"
+                android:contentDescription="@string/decrease_active_time"
                 android:scaleType="fitCenter" android:padding="16dp"/>
 
         <EditText
@@ -40,6 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/add_24"
+                android:contentDescription="@string/increase_active_time"
                 android:scaleType="fitCenter" android:padding="16dp"/>
     </LinearLayout>
     <TextView
@@ -58,6 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/minus"
+                android:contentDescription="@string/decrease_rest_time"
                 android:scaleType="fitCenter" android:padding="16dp"/>
 
         <EditText
@@ -74,6 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/add_24"
+                android:contentDescription="@string/increase_rest_time"
                 android:scaleType="fitCenter" android:padding="16dp"/>
     </LinearLayout>
 
@@ -83,5 +87,6 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
+            android:contentDescription="@string/btn_start"
             android:background="@drawable/play_circle_120"/>
 </LinearLayout>

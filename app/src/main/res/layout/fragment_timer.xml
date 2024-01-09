@@ -48,6 +48,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
+                android:contentDescription="@string/btn_pause"
                 android:background="@drawable/pause_circle_120"/>
 
         <Button
@@ -56,6 +57,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
+                android:contentDescription="@string/btn_resume"
                 android:background="@drawable/play_circle_120"/>
 
         <Button
@@ -64,6 +66,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
+                android:contentDescription="@string/btn_stop"
                 android:background="@drawable/stop_circle_120"/>
     </LinearLayout>
 

@@ -3,10 +3,15 @@
     <string name="app_title">Interval Timer</string>
     <string name="activeTime_label">Active</string>
     <string name="restTime_label">Rest</string>
-    <string name="btn_start">Prepare</string>
+    <string name="btn_settings">Settings</string>
+    <string name="btn_start">Start</string>
     <string name="btn_pause">Pause</string>
     <string name="btn_stop">Stop</string>
     <string name="btn_resume">Resume</string>
     <string name="setCount">%1$d</string>
     <string name="set">SET</string>
+    <string name="decrease_active_time">Decrease Active Time</string>
+    <string name="increase_active_time">Increase Active Time</string>
+    <string name="decrease_rest_time">Decrease Rest Time</string>
+    <string name="increase_rest_time">Increase Rest Time</string>
 </resources>
