@@ -1,1 +1,1 @@
-Designed for HIIT workouts (high-intensity interval training). Set your active and rest time, and hit go.
+An interval timer designed for HIIT workouts. Set your active and rest time, and hit go. Simple and easy-to-use.
