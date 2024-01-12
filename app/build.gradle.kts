@@ -22,28 +22,30 @@ android {
         applicationId = "dev.randombits.intervaltimer"
         minSdk = 24
         targetSdk = 33
-        versionCode = 4
-        versionName = "1.0.4"
+        versionCode = 5
+        versionName = "1.0.5"
 
         vectorDrawables {
             useSupportLibrary = true
         }
     }
 
-    applicationVariants.all {
-        outputs.all {
-            var apkName = "IntervalTimer-" + defaultConfig.versionName;
-            if (name == "debug") {
-                apkName += "-${name}"
+    if (findProperty("PLAY_STORE_KEY") != null) {
+        applicationVariants.all {
+            outputs.all {
+                var apkName = "IntervalTimer-" + defaultConfig.versionName;
+                if (name == "debug") {
+                    apkName += "-${name}"
+                }
+                this as com.android.build.gradle.internal.api.ApkVariantOutputImpl
+                outputFileName = apkName + ".apk"
             }
-            this as com.android.build.gradle.internal.api.ApkVariantOutputImpl
-            outputFileName = apkName + ".apk"
         }
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             if (findProperty("PLAY_STORE_KEY") != null) {
                 signingConfig = signingConfigs.getByName("release")
