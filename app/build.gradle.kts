@@ -30,6 +30,17 @@ android {
         }
     }
 
+    applicationVariants.all {
+        outputs.all {
+            var apkName = "IntervalTimer-" + defaultConfig.versionName;
+            if (name == "debug") {
+                apkName += "-${name}"
+            }
+            this as com.android.build.gradle.internal.api.ApkVariantOutputImpl
+            outputFileName = apkName + ".apk"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
