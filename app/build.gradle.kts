@@ -51,6 +51,13 @@ android {
                 signingConfig = signingConfigs.getByName("release")
             }
         }
+        create("playStore") {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            if (findProperty("PLAY_STORE_KEY") != null) {
+                signingConfig = signingConfigs.getByName("release")
+            }
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
