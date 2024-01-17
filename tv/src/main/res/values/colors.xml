@@ -1,0 +1,15 @@
+<resources>
+    <color name="default_background">#252525</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray_200">#FFE5E5E5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
+    <color name="actionBtn">#88D86C</color>
+    <color name="pauseBtn">#F1EE0E</color>
+    <color name="stopBtn">#CD4D2C</color>
+    <color name="activeBg">#1A9F0B</color>
+    <color name="restBg">#AB0606</color>
+    <color name="startBg">#F1F1F1</color>
+    <color name="text">#aaaaaa</color>
+
+</resources>

@@ -10,12 +10,28 @@
               <deviceKey>
                 <Key>
                   <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Android\.android\avd\Nexus_10_API_33.avd" />
+                  <value value="C:\Android\.android\avd\Television_4K_API_34.avd" />
                 </Key>
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-01-07T00:43:04.608445300Z" />
+          <timeTargetWasSelectedWithDropDown value="2024-01-15T18:29:10.172604200Z" />
+        </State>
+      </entry>
+      <entry key="tv">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Android\.android\avd\Television_4K_API_34.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-01-17T19:10:47.321852200Z" />
         </State>
       </entry>
     </value>

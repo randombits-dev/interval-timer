@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              tools:context="dev.randombits.intervaltimer.TimerFragment"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:gravity="center_vertical" android:id="@+id/timerLayout">
+
+    <TextView
+            android:fontFamily="monospace"
+            android:text="@string/set"
+            android:focusable="false"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textAlignment="center"/>
+
+    <TextView
+            android:fontFamily="monospace"
+            android:text="1"
+            android:focusable="false"
+            android:textSize="64sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/setCount" android:textAlignment="center"/>
+
+    <TextView
+            android:fontFamily="monospace"
+            android:text=""
+            android:textSize="65sp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:focusable="false"
+            android:layout_height="wrap_content" android:id="@+id/status" android:textAlignment="center"/>
+
+    <TextView
+            android:id="@+id/timeLeft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="28dp"
+            android:fontFamily="monospace"
+            android:focusable="false"
+            android:text="0"
+            android:textSize="120sp"
+            android:textAlignment="center" android:textStyle="bold"/>
+</LinearLayout>

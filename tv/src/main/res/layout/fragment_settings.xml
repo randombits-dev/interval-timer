@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              tools:context="dev.randombits.intervaltimer.SettingsFragment"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:id="@+id/settingsLayout"
+              android:gravity="center_vertical">
+    <TextView
+            android:text="@string/activeTime_label"
+            android:layout_width="match_parent"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content" android:id="@+id/activeTimeLabel" android:textAlignment="center"
+            android:textSize="20sp" android:fontFamily="monospace" android:textStyle="bold"/>
+    <!--    <include layout="@layout/fragment_number_control" android:id="@+id/testNUmberControl" android:initialValue="33"/>-->
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:orientation="horizontal" android:textAlignment="center"
+            android:layout_gravity="center">
+
+        <ImageView android:id="@+id/activeTime_less" android:layout_width="50sp" android:layout_height="match_parent"
+                   android:src="@drawable/left" android:scaleType="fitCenter"
+                   android:contentDescription="@string/decrease_active_time" android:padding="4dp"/>
+
+        <!--        <NumberPicker android:layout_width="wrap_content" android:layout_height="wrap_content"/>-->
+
+
+        <TextView
+                android:id="@+id/activeTime"
+                android:fontFamily="monospace"
+                android:text=""
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:focusable="true"
+                android:layout_width="100sp"
+                android:layout_height="match_parent" android:textAlignment="center"/>
+
+
+        <ImageView android:id="@+id/activeTime_more" android:layout_width="50sp" android:layout_height="match_parent"
+                   android:src="@drawable/right" android:scaleType="fitCenter"
+                   android:contentDescription="@string/increase_active_time" android:padding="4dp"/>
+    </LinearLayout>
+    <TextView
+            android:text="@string/restTime_label"
+            android:layout_width="match_parent"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content" android:id="@+id/restTimeLabel" android:textAlignment="center"
+            android:textSize="20sp" android:layout_marginTop="30dp" android:fontFamily="monospace"
+            android:textStyle="bold"/>
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:orientation="horizontal" android:layout_gravity="center">
+
+        <ImageView android:id="@+id/restTime_less" android:layout_width="50sp" android:layout_height="match_parent"
+                   android:src="@drawable/left" android:scaleType="fitCenter" android:visibility="invisible"
+                   android:contentDescription="@string/decrease_rest_time" android:padding="4dp"/>
+
+        <TextView
+                android:id="@+id/restTime"
+                android:fontFamily="monospace"
+                android:text=""
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:focusable="true"
+                android:layout_width="100sp"
+                android:layout_height="match_parent" android:textAlignment="center"/>
+
+        <ImageView android:id="@+id/restTime_more" android:layout_width="50sp" android:layout_height="match_parent"
+                   android:visibility="invisible"
+                   android:src="@drawable/right" android:scaleType="fitCenter"
+                   android:contentDescription="@string/increase_rest_time" android:padding="4dp"/>
+    </LinearLayout>
+
+    <Button
+            android:id="@+id/beginBtn"
+            android:layout_marginTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/btn_start"
+            android:paddingVertical="20sp"
+            android:paddingHorizontal="40sp"
+            android:textSize="24sp"
+            android:background="@drawable/picker_label"
+            android:textColor="@drawable/button_text"
+            android:contentDescription="@string/btn_start">
+    </Button>
+</LinearLayout>

@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Interval Timer"
 include(":app")
+include(":tv")
