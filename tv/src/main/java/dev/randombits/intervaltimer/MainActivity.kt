@@ -34,8 +34,7 @@ class MainActivity : AppCompatActivity() {
         val restTime = prefs.getInt("restTime", 15);
 
         val ft = supportFragmentManager.beginTransaction();
-        settingsFrag = SettingsFragment.newInstance(activeTime, restTime);
-        ft.add(R.id.mainFrame, settingsFrag as Fragment);
+        ft.add(R.id.mainFrame, SettingsFragment());
         ft.commit();
         alarmSound = soundPool.load(this, R.raw.threesecbeep, 1);
     }
@@ -47,22 +46,6 @@ class MainActivity : AppCompatActivity() {
         timerFrag = TimerFragment.newInstance(activeTime, restTime);
         ft.replace(R.id.mainFrame, timerFrag as Fragment);
         ft.addToBackStack("start");
-//        ft.hide(settingsFrag as Fragment);
-//
-//        ft.add(R.id.mainFrame, timerFrag as Fragment)
-
-        ft.commit()
-
-    }
-
-    fun backToSettings() {
-        val ft = supportFragmentManager.beginTransaction()
-        if (timerFrag != null) {
-            ft.remove(timerFrag as Fragment);
-        }
-
-        ft.show(settingsFrag as Fragment)
-
         ft.commit()
     }
 
@@ -71,6 +54,13 @@ class MainActivity : AppCompatActivity() {
         prefs.putInt("activeTime", activeTime);
         prefs.putInt("restTime", restTime);
         prefs.apply();
+    }
+
+    fun getSettings(): Pair<Int, Int> {
+        val prefs = getSharedPreferences(packageName, MODE_PRIVATE);
+        val activeTime = prefs.getInt("activeTime", 45);
+        val restTime = prefs.getInt("restTime", 15);
+        return Pair(activeTime, restTime);
     }
 
     fun cancelAlarm() {

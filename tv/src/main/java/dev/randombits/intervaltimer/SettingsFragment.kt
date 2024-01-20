@@ -9,13 +9,7 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 
-private const val ARG_PARAM1 = "active";
-private const val ARG_PARAM2 = "rest"
-
 class SettingsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var activeTime: Int? = 45
-    private var restTime: Int? = 15
     private var mainActivity: MainActivity? = null;
     private var activeInput: TextView? = null;
     private var restInput: TextView? = null;
@@ -25,27 +19,19 @@ class SettingsFragment : Fragment() {
         mainActivity = context as MainActivity;
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        arguments?.let {
-            activeTime = it.getInt(dev.randombits.intervaltimer.ARG_PARAM1)
-            restTime = it.getInt(dev.randombits.intervaltimer.ARG_PARAM2)
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
+        val settings = mainActivity!!.getSettings();
 
         val view = inflater.inflate(R.layout.fragment_settings, container, false) as View;
 
         activeInput = view.findViewById(R.id.activeTime) as TextView;
-        activeInput!!.text = activeTime.toString()
+        activeInput!!.text = settings.first.toString();
         restInput = view.findViewById(R.id.restTime)
-        restInput!!.text = restTime.toString()
+        restInput!!.text = settings.second.toString();
 
         activeInput!!.setOnFocusChangeListener { v, hasFocus ->
             view.findViewById<View>(R.id.activeTime_less).isVisible = hasFocus;
@@ -65,7 +51,7 @@ class SettingsFragment : Fragment() {
                 val activeTime = activeInput!!.text.toString();
                 if (activeTime.isBlank()) {
                     activeInput!!.text = "45";
-                } else if (Integer.parseInt(activeTime) >= 5) {
+                } else if (Integer.parseInt(activeTime) > 5) {
                     activeInput!!.text = (Integer.parseInt(activeTime) - 5).toString();
                 }
             } else if (keyCode == 22) {
@@ -89,7 +75,7 @@ class SettingsFragment : Fragment() {
                 if (activeTime.isBlank()) {
                     restInput!!.text = "45";
                 } else {
-                    if (Integer.parseInt(activeTime) >= 5) {
+                    if (Integer.parseInt(activeTime) > 5) {
                         restInput!!.text = (Integer.parseInt(activeTime) - 5).toString();
                     }
                 }
@@ -128,18 +114,11 @@ class SettingsFragment : Fragment() {
         );
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance(active: Int, rest: Int) =
-            SettingsFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(dev.randombits.intervaltimer.ARG_PARAM1, active)
-                    putInt(dev.randombits.intervaltimer.ARG_PARAM2, rest)
-                }
-            }
-    }
-
     private fun startTimer() {
+        mainActivity!!.savePreferences(
+            Integer.parseInt(activeInput!!.text.toString()),
+            Integer.parseInt(restInput!!.text.toString())
+        );
         val activeTime = requireView().findViewById<TextView>(R.id.activeTime).text.toString();
         val restTime = requireView().findViewById<TextView>(R.id.restTime).text.toString();
         mainActivity!!.startTimer(Integer.parseInt(activeTime), Integer.parseInt(restTime));

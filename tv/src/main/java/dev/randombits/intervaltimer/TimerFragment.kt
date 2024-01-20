@@ -106,19 +106,10 @@ class TimerFragment : Fragment() {
     private fun pauseTimer() {
         timer!!.pause();
         mainActivity!!.cancelAlarm();
-//        requireView().findViewById<View>(R.id.resumeBtn).isVisible = true;
-//        requireView().findViewById<View>(R.id.pauseBtn).isVisible = false;
     }
 
     private fun resumeTimer() {
-//        requireView().findViewById<View>(R.id.resumeBtn).isVisible = false;
-//        requireView().findViewById<View>(R.id.pauseBtn).isVisible = true;
         timer!!.resume()
-    }
-
-    private fun stopTimer() {
-        timer!!.stop();
-        mainActivity!!.backToSettings();
     }
 
     companion object {

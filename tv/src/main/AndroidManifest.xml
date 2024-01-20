@@ -16,10 +16,10 @@
             android:theme="@style/AppTheme">
         <activity
                 android:name=".MainActivity"
-                android:banner="@drawable/app_icon_your_company"
+                android:banner="@mipmap/ic_banner"
                 android:exported="true"
-                android:icon="@drawable/app_icon_your_company"
-                android:logo="@drawable/app_icon_your_company"
+                android:icon="@mipmap/ic_banner"
+                android:logo="@mipmap/ic_launcher"
                 android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
