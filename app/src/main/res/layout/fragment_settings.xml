@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/minus"
                 android:contentDescription="@string/decrease_active_time"
-                android:scaleType="fitCenter" android:padding="16dp"/>
+                android:scaleType="fitCenter" android:padding="16dp" android:background="@color/white"/>
 
         <EditText
                 android:id="@+id/activeTime"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/add_24"
                 android:contentDescription="@string/increase_active_time"
-                android:scaleType="fitCenter" android:padding="16dp"/>
+                android:scaleType="fitCenter" android:padding="16dp" android:background="@color/white"/>
     </LinearLayout>
     <TextView
             android:text="@string/restTime_label"
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/minus"
                 android:contentDescription="@string/decrease_rest_time"
-                android:scaleType="fitCenter" android:padding="16dp"/>
+                android:scaleType="fitCenter" android:padding="16dp" android:background="@color/white"/>
 
         <EditText
                 android:id="@+id/restTime"
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/add_24"
                 android:contentDescription="@string/increase_rest_time"
-                android:scaleType="fitCenter" android:padding="16dp"/>
+                android:scaleType="fitCenter" android:padding="16dp" android:background="@color/white"/>
     </LinearLayout>
 
     <Button

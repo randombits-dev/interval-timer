@@ -22,8 +22,8 @@ android {
         applicationId = "dev.randombits.intervaltimer"
         minSdk = 24
         targetSdk = 33
-        versionCode = 5
-        versionName = "1.0.5"
+        versionCode = 7
+        versionName = "1.0.7"
 
         vectorDrawables {
             useSupportLibrary = true
