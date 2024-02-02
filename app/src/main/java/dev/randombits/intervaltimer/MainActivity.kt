@@ -6,13 +6,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 
 
 class MainActivity : AppCompatActivity() {
     private var alarmSound = 0
-    private var settingsFrag: Fragment? = null;
-    private var timerFrag: Fragment? = null;
     private var playingSound = 0;
 
     val attributes = AudioAttributes.Builder()
@@ -33,34 +30,23 @@ class MainActivity : AppCompatActivity() {
         val activeTime = prefs.getInt("activeTime", 45);
         val restTime = prefs.getInt("restTime", 15);
 
-        val ft = supportFragmentManager.beginTransaction();
-        settingsFrag = SettingsFragment.newInstance(activeTime, restTime);
-        ft.add(R.id.mainFrame, settingsFrag as Fragment);
-        ft.commit();
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.mainFrame, SettingsFragment.newInstance(activeTime, restTime))
+                .commit();
+        }
         alarmSound = soundPool.load(this, R.raw.threesecbeep, 1);
     }
 
     fun startTimer(activeTime: Int, restTime: Int) {
         savePreferences(activeTime, restTime);
-        val ft = supportFragmentManager.beginTransaction()
-        ft.hide(settingsFrag as Fragment);
-
-        timerFrag = TimerFragment.newInstance(activeTime, restTime);
-        ft.add(R.id.mainFrame, timerFrag as Fragment)
-
-        ft.commit()
-
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.mainFrame, TimerFragment.newInstance(activeTime, restTime))
+            .addToBackStack("start").commit()
     }
 
     fun backToSettings() {
-        val ft = supportFragmentManager.beginTransaction()
-        if (timerFrag != null) {
-            ft.remove(timerFrag as Fragment);
-        }
-
-        ft.show(settingsFrag as Fragment)
-
-        ft.commit()
+        supportFragmentManager.popBackStack();
     }
 
     fun savePreferences(activeTime: Int, restTime: Int) {

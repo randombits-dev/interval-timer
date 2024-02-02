@@ -37,26 +37,7 @@ class SettingsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-//        view.
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_settings, container, false) as View;
-
-//        if (savedInstanceState == null) {
-//            view.findViewById<EditText>(R.id.activeTime)
-//                .setText(savedInstanceState.getInt("settings.activeTime", 45).toString());
-//        } else {
-//            activePeriod = savedInstanceState.getLong("settings.activePeriod", 20000)
-//            restPeriod = savedInstanceState.getLong("settings.restPeriod", 10000)
-//            delay = savedInstanceState.getLong("settings.delay", 2000)
-//        }
-
-//        if (savedInstanceState != null) {
-//            view.findViewById<EditText>(R.id.activeTime)
-//                .setText(savedInstanceState.getInt("settings.activeTime", 45).toString());
-//            view.findViewById<EditText>(R.id.restTime)
-//                .setText(savedInstanceState.getInt("settings.restTime", 15).toString());
-//        }
 
         activeInput = view.findViewById(R.id.activeTime)
         activeInput!!.setText(activeTime.toString())
