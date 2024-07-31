@@ -19,12 +19,14 @@
             android:layout_gravity="center">
 
         <ImageButton
-                android:id="@+id/activeTime_less"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/minus"
-                android:contentDescription="@string/decrease_active_time"
-                android:scaleType="fitCenter" android:padding="16dp" android:background="@color/white"/>
+            android:id="@+id/activeTime_less"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/decrease_active_time"
+            android:padding="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/minus" />
 
         <EditText
                 android:id="@+id/activeTime"
@@ -37,12 +39,14 @@
                 android:layout_gravity="center|center_horizontal" android:fontFamily="monospace"/>
 
         <ImageButton
-                android:id="@+id/activeTime_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/add_24"
-                android:contentDescription="@string/increase_active_time"
-                android:scaleType="fitCenter" android:padding="16dp" android:background="@color/white"/>
+            android:id="@+id/activeTime_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/increase_active_time"
+            android:padding="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/add_24" />
     </LinearLayout>
     <TextView
             android:text="@string/restTime_label"
@@ -56,12 +60,14 @@
             android:orientation="horizontal" android:layout_gravity="center">
 
         <ImageButton
-                android:id="@+id/restTime_less"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/minus"
-                android:contentDescription="@string/decrease_rest_time"
-                android:scaleType="fitCenter" android:padding="16dp" android:background="@color/white"/>
+            android:id="@+id/restTime_less"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/decrease_rest_time"
+            android:padding="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/minus" />
 
         <EditText
                 android:id="@+id/restTime"
@@ -73,12 +79,14 @@
                 android:text="" android:maxLength="4" android:maxWidth="10dp" android:fontFamily="monospace"/>
 
         <ImageButton
-                android:id="@+id/restTime_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/add_24"
-                android:contentDescription="@string/increase_rest_time"
-                android:scaleType="fitCenter" android:padding="16dp" android:background="@color/white"/>
+            android:id="@+id/restTime_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/increase_rest_time"
+            android:padding="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/add_24" />
     </LinearLayout>
 
     <Button
