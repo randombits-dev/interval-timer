@@ -1,0 +1,1 @@
+Support system theme (dark/light)

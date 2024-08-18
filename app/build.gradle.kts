@@ -22,8 +22,8 @@ android {
         applicationId = "dev.randombits.intervaltimer"
         minSdk = 24
         targetSdk = 34
-        versionCode = 9
-        versionName = "1.0.9"
+        versionCode = 10
+        versionName = "1.1.0"
 
         vectorDrawables {
             useSupportLibrary = true
@@ -70,7 +70,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.14"
     }
     packaging {
         resources {
@@ -80,7 +80,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.activity:activity-compose:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.activity:activity-compose:1.9.1")
+    implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 }
