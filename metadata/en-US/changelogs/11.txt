@@ -1,0 +1,1 @@
+Fix minor bugs when using 0 as active or rest times
