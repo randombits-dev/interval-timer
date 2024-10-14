@@ -7,16 +7,16 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 
-
 class MainActivity : AppCompatActivity() {
     private var alarmSound = 0
     private var playingSound = 0;
 
-    val attributes = AudioAttributes.Builder()
+    private val attributes: AudioAttributes = AudioAttributes.Builder()
         .setUsage(AudioAttributes.USAGE_MEDIA)
         .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
         .build()
-    val soundPool = SoundPool.Builder()
+
+    private val soundPool: SoundPool = SoundPool.Builder()
         .setAudioAttributes(attributes)
         .setMaxStreams(1)
         .build()
@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_main);
-
 
         val prefs = getSharedPreferences(packageName, MODE_PRIVATE);
         val activeTime = prefs.getInt("activeTime", 45);
@@ -35,6 +34,7 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.mainFrame, SettingsFragment.newInstance(activeTime, restTime))
                 .commit();
         }
+
         alarmSound = soundPool.load(this, R.raw.threesecbeep, 1);
     }
 
@@ -57,22 +57,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun cancelAlarm() {
-        if (playingSound == 0) {
+        if (playingSound == 0)
             return;
-        }
+
         soundPool.stop(playingSound);
         playingSound = 0;
     }
 
     fun soundAlarm() {
-        if (playingSound > 0) {
+        if (playingSound > 0)
             return;
-        }
-        playingSound = soundPool.play(alarmSound, 1f, 1f, 1, 0, 1f);
 
-        Handler(Looper.getMainLooper()).postDelayed(
-            { playingSound = 0 },
-            3000
-        )
+        playingSound = soundPool.play(alarmSound, 1f, 1f, 1, 0, 1f);
+        Handler(Looper.getMainLooper()).postDelayed({ playingSound = 0 }, 3000);
     }
 }
