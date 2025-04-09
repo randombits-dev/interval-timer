@@ -1,11 +1,12 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 android {
     namespace = "dev.randombits.intervaltimer"
-    compileSdk = 34
+    compileSdk = 35
 
     signingConfigs {
         create("release") {
@@ -21,7 +22,7 @@ android {
     defaultConfig {
         applicationId = "dev.randombits.intervaltimer"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 11
         versionName = "1.1.1"
 
@@ -33,7 +34,7 @@ android {
     if (findProperty("PLAY_STORE_KEY") != null) {
         applicationVariants.all {
             outputs.all {
-                var apkName = "IntervalTimer-" + defaultConfig.versionName;
+                var apkName = "IntervalTimer-" + defaultConfig.versionName
                 if (name == "debug") {
                     apkName += "-${name}"
                 }
@@ -69,9 +70,6 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.14"
-    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -80,7 +78,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.activity:activity-compose:1.9.1")
+    implementation("androidx.activity:activity-compose:1.10.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.constraintlayout:constraintlayout:2.2.1")
 }
