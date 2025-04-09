@@ -3,12 +3,10 @@ package dev.randombits.intervaltimer
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
-import android.text.InputFilter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import androidx.compose.ui.semantics.text
 import androidx.fragment.app.Fragment
 
 private const val ARG_PARAM1 = "active";
@@ -20,13 +18,6 @@ class SettingsFragment : Fragment() {
     private var mainActivity: MainActivity? = null;
     private var activeInput: EditText? = null;
     private var restInput: EditText? = null;
-
-    private val rangeFilter = InputFilter { source, _, _, dest, _, _ ->
-        when (val input = (dest.toString() + source.toString()).toIntOrNull()) {
-            null, 0 -> "";
-            else -> if (input >= 1) null else "";
-        }
-    };
 
     override fun onAttach(context: Context) {
         super.onAttach(context);
@@ -55,41 +46,39 @@ class SettingsFragment : Fragment() {
     private fun setupFields(view: View) {
         activeInput = view.findViewById(R.id.activeTime);
         activeInput!!.setText(defaultActiveTime.toString());
-        activeInput!!.filters = arrayOf(rangeFilter);
         restInput = view.findViewById(R.id.restTime);
         restInput!!.setText(defaultRestTime.toString());
-        restInput!!.filters = arrayOf(rangeFilter);
 
         view.findViewById<View>(R.id.activeTime_less).setOnClickListener {
-            decreaseTimerValue(activeInput!!, defaultActiveTime, -5);
+            changeActiveValue(activeInput!!, defaultActiveTime, -5);
         }
 
         view.findViewById<View>(R.id.restTime_less).setOnClickListener {
-            decreaseTimerValue(restInput!!, defaultRestTime, -5);
+            changeRestValue(restInput!!, defaultRestTime, -5);
         }
 
         view.findViewById<View>(R.id.activeTime_more).setOnClickListener {
-            increaseTimerValue(activeInput!!, defaultActiveTime, 5);
+            changeActiveValue(activeInput!!, defaultActiveTime, 5);
         }
 
         view.findViewById<View>(R.id.restTime_more).setOnClickListener {
-            increaseTimerValue(restInput!!, defaultRestTime, 5);
+            changeRestValue(restInput!!, defaultRestTime, 5);
         }
 
         view.findViewById<View>(R.id.beginBtn).setOnClickListener { startTimer(); };
     }
 
     @SuppressLint("SetTextI18n")
-    private fun decreaseTimerValue(editText: EditText, defaultValue: Int, change: Int) {
+    private fun changeRestValue(editText: EditText, defaultValue: Int, change: Int) {
         val currentValue = editText.text.toString().toIntOrNull() ?: defaultValue;
-        val newValue = (currentValue + change).coerceAtLeast(5);
+        val newValue = (currentValue + change).coerceAtLeast(0);
         editText.setText(newValue.toString());
     }
 
     @SuppressLint("SetTextI18n")
-    private fun increaseTimerValue(editText: EditText, defaultValue: Int, change: Int) {
+    private fun changeActiveValue(editText: EditText, defaultValue: Int, change: Int) {
         val currentValue = editText.text.toString().toIntOrNull() ?: defaultValue;
-        val newValue = currentValue + change;
+        val newValue = (currentValue + change).coerceAtLeast(5);
         editText.setText(newValue.toString());
     }
 
@@ -128,8 +117,12 @@ class SettingsFragment : Fragment() {
     }
 
     private fun startTimer() {
-        val activeTime = requireView().findViewById<EditText>(R.id.activeTime).text.toString();
-        val restTime = requireView().findViewById<EditText>(R.id.restTime).text.toString();
-        mainActivity!!.startTimer(Integer.parseInt(activeTime), Integer.parseInt(restTime));
+        var activeTime = Integer.parseInt(requireView().findViewById<EditText>(R.id.activeTime).text.toString());
+        var restTime = Integer.parseInt(requireView().findViewById<EditText>(R.id.restTime).text.toString());
+        if (activeTime < 5)
+            activeTime = 5;
+        if (restTime < 0)
+            restTime = 0;
+        mainActivity!!.startTimer(activeTime, restTime);
     }
 }
