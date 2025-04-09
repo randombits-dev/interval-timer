@@ -83,6 +83,9 @@ class SettingsFragment : Fragment() {
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
+        if (activeInput == null || restInput == null) {
+            return;
+        }
         outState.putInt(
             "settings.activeTime",
             Integer.parseInt(activeInput!!.text.toString())
@@ -99,6 +102,9 @@ class SettingsFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy();
 
+        if (activeInput == null || restInput == null) {
+            return;
+        }
         mainActivity!!.savePreferences(
             Integer.parseInt(activeInput!!.text.toString()),
             Integer.parseInt(restInput!!.text.toString())
