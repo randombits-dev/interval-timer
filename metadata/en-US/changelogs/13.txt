@@ -1,0 +1,1 @@
+Allow the timer to continue running when the app is in the background
