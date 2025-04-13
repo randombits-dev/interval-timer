@@ -40,7 +40,9 @@ class TimerFragment : Fragment() {
     override fun onPause() {
         super.onPause();
         mainActivity!!.window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        pauseTimer();
+
+        // allowing it to continue running in the background
+        // pauseTimer();
     }
 
     override fun onCreateView(
