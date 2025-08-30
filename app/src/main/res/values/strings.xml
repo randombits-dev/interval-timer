@@ -14,4 +14,5 @@
     <string name="increase_active_time">Increase Active Time</string>
     <string name="decrease_rest_time">Decrease Rest Time</string>
     <string name="increase_rest_time">Increase Rest Time</string>
+    <string name="prepareTime_label">Prepare</string>
 </resources>
