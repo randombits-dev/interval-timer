@@ -8,7 +8,7 @@ enum class TimerStatus {
     REST
 }
 
-abstract class HiitTimer(private val activeTime: Int, val restTime: Int) {
+abstract class HiitTimer(private val activeTime: Int, val restTime: Int, private val maxSets: Int = Int.MAX_VALUE) {
     private var set: Int = 0;
     private var status: TimerStatus = TimerStatus.PREPARE;
     private var timer: CountDownTimer? = null;
@@ -17,6 +17,7 @@ abstract class HiitTimer(private val activeTime: Int, val restTime: Int) {
 
     abstract fun onUpdate(millisRemaining: Long);
     abstract fun onStatusChange(status: TimerStatus, set: Int);
+    abstract fun onComplete();
 
     fun start() {
         isRunning = true;
@@ -83,7 +84,12 @@ abstract class HiitTimer(private val activeTime: Int, val restTime: Int) {
             override fun onFinish() {
                 remainingTime = 0;
                 if (isRunning)
-                    startRest();
+                    if (set >= maxSets) {
+                        stop();
+                        onComplete();
+                    } else {
+                        startRest();
+                    }
                 else
                     this.cancel();
             }

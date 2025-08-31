@@ -15,4 +15,7 @@
     <string name="decrease_rest_time">Decrease Rest Time</string>
     <string name="increase_rest_time">Increase Rest Time</string>
     <string name="prepareTime_label">Prepare</string>
+    <string name="sets_label">Sets</string>
+    <string name="decrease_sets">Decrease Sets</string>
+    <string name="increase_sets">Increase Sets</string>
 </resources>

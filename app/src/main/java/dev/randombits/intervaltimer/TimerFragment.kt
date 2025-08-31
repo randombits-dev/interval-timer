@@ -12,12 +12,14 @@ import androidx.fragment.app.Fragment
 
 private const val ARG_PARAM1 = "active";
 private const val ARG_PARAM2 = "rest";
+private const val ARG_PARAM3 = "sets";
 
 class TimerFragment : Fragment() {
     private var activeTime: Int? = null;
     private var restTime: Int? = null;
     private var mainActivity: MainActivity? = null;
     private var timer: HiitTimer? = null;
+    private var maxSets: Int = Int.MAX_VALUE;
 
     override fun onAttach(context: Context) {
         super.onAttach(context);
@@ -29,6 +31,8 @@ class TimerFragment : Fragment() {
         arguments?.let {
             activeTime = it.getInt(ARG_PARAM1);
             restTime = it.getInt(ARG_PARAM2);
+            val setsArg = it.getInt(ARG_PARAM3, Int.MAX_VALUE);
+            maxSets = if (setsArg <= 0) Int.MAX_VALUE else setsArg;
         };
     }
 
@@ -55,7 +59,7 @@ class TimerFragment : Fragment() {
         val statusTextView: TextView = view.findViewById(R.id.status);
         val setCountView: TextView = view.findViewById(R.id.setCount);
 
-        timer = object : HiitTimer(activeTime!!, restTime!!) {
+        timer = object : HiitTimer(activeTime!!, restTime!!, maxSets) {
             override fun onUpdate(millisRemaining: Long) {
                 resultTextView.text = ((millisRemaining + 999) / 1000).toString();
 
@@ -78,6 +82,11 @@ class TimerFragment : Fragment() {
 
                 if (set > 0)
                     setCountView.text = getString(R.string.setCount, set);
+            }
+
+            override fun onComplete() {
+                mainActivity!!.backToSettings();
+                mainActivity!!.soundEnd();
             }
         };
         timer!!.start();
@@ -109,11 +118,12 @@ class TimerFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(active: Int, rest: Int) =
+        fun newInstance(active: Int, rest: Int, sets: Int) =
             TimerFragment().apply {
                 arguments = Bundle().apply {
                     putInt(ARG_PARAM1, active);
                     putInt(ARG_PARAM2, rest);
+                    putInt(ARG_PARAM3, sets);
                 }
             };
     }
