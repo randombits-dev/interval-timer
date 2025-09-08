@@ -1,0 +1,1 @@
+Add setting for number of sets. Add Spanish translations.
