@@ -16,7 +16,7 @@
     <string name="decrease_rest_time">Decrementar Tiempo Descanso</string>
     <string name="increase_rest_time">Incrementar Tiempo Descanso</string>
     <string name="prepareTime_label">Preparado</string>
-    <string name="sets_label">Repeticións</string>
-    <string name="decrease_sets">Decrementar Repeticións</string>
-    <string name="increase_sets">Incrementar Repeticións</string>
+    <string name="sets_label">Repeticiones</string>
+    <string name="decrease_sets">Decrementar Repeticiones</string>
+    <string name="increase_sets">Incrementar Repeticiones</string>
 </resources>
