@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Interval Timer</string>
+    <string name="app_title">Interval Timer</string>
+    <string name="activeTime_label">Effort</string>
+    <string name="restTime_label">Repos</string>
+    <string name="btn_settings">Configuration</string>
+    <string name="btn_start">Départ</string>
+    <string name="btn_pause">Pause</string>
+    <string name="btn_stop">Arrêt</string>
+    <string name="btn_resume">Reprendre</string>
+    <string name="setCount">%1$d</string>
+    <string name="set">RÉPÉTITIONS</string>
+    <string name="decrease_active_time">Diminuer Temps Effort</string>
+    <string name="increase_active_time">Augmenter Temps Effort</string>
+    <string name="decrease_rest_time">Diminuer Temps Repos</string>
+    <string name="increase_rest_time">Augmenter Temps Repos</string>
+    <string name="prepareTime_label">Prêt·e?</string>
+    <string name="sets_label">Répétitions</string>
+    <string name="decrease_sets">Diminuer Répétitions</string>
+    <string name="increase_sets">Augmenter Répétitions</string>
+</resources>
