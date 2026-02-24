@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Interval Timer</string>
+    <string name="app_title">Interval Timer</string>
+    <string name="activeTime_label">Aktivita</string>
+    <string name="restTime_label">Odpočinek</string>
+    <string name="btn_settings">Nastavení</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_pause">Pauza</string>
+    <string name="btn_stop">Stop</string>
+    <string name="btn_resume">Pokračovat</string>
+    <string name="setCount">%1$d</string>
+    <string name="set">SET</string>
+    <string name="decrease_active_time">Zkrácení času aktivity</string>
+    <string name="increase_active_time">Prodloužení času aktivity</string>
+    <string name="decrease_rest_time">Zkrácení času odpočinku</string>
+    <string name="increase_rest_time">Prodloužení času odpočinku</string>
+    <string name="prepareTime_label">Připravit</string>
+    <string name="sets_label">Sety</string>
+    <string name="decrease_sets">Snížení setů</string>
+    <string name="increase_sets">Zvýšení setů</string>
+</resources>
