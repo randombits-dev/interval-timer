@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import kotlin.math.min
 
 private const val ARG_PARAM1 = "active";
 private const val ARG_PARAM2 = "rest";
@@ -43,7 +44,20 @@ class SettingsFragment : Fragment() {
     ): View {
         val view = inflater.inflate(R.layout.fragment_settings, container, false) as View;
         setupFields(view);
+        scaleToScreen(view);
         return view;
+    }
+
+    private fun scaleToScreen(view: View) {
+        val screen = resources.displayMetrics;
+        view.measure(
+            View.MeasureSpec.makeMeasureSpec(screen.widthPixels, View.MeasureSpec.EXACTLY),
+            View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+        );
+        val rowWidth = (view.findViewById<View>(R.id.activeTime).parent as View).measuredWidth;
+        val scale = min(0.8f * screen.widthPixels / rowWidth, 0.85f * screen.heightPixels / view.measuredHeight);
+        // more than 2.5x looks oversized on tablets
+        scaleView(view, scale.coerceIn(1f, 2.5f));
     }
 
     @SuppressLint("SetTextI18n")
