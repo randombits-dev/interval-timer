@@ -3,14 +3,14 @@ package dev.randombits.intervaltimer
 import android.media.AudioAttributes
 import android.media.SoundPool
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
+import android.os.SystemClock
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     private var alarmSound = 0
     private var endSound = 0;
-    private var playingSound = 0;
+    private var alarmStream = 0;
+    private var alarmTime = 0L;
 
     private val attributes: AudioAttributes = AudioAttributes.Builder()
         .setUsage(AudioAttributes.USAGE_MEDIA)
@@ -61,19 +61,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun cancelAlarm() {
-        if (playingSound == 0)
+        // a resumed countdown beeps again
+        alarmTime = 0;
+        if (alarmStream == 0)
             return;
 
-        soundPool.stop(playingSound);
-        playingSound = 0;
+        soundPool.stop(alarmStream);
+        alarmStream = 0;
     }
 
     fun soundAlarm() {
-        if (playingSound > 0)
+        // the timer asks for the beep on several ticks in a row
+        val time = SystemClock.elapsedRealtime();
+        if (alarmTime > 0 && time - alarmTime < 3000)
             return;
 
-        playingSound = soundPool.play(alarmSound, 1f, 1f, 1, 0, 1f);
-        Handler(Looper.getMainLooper()).postDelayed({ playingSound = 0 }, 3000);
+        // if it fails, the next tick tries again
+        val stream = soundPool.play(alarmSound, 1f, 1f, 1, 0, 1f);
+        if (stream == 0)
+            return;
+
+        alarmStream = stream;
+        alarmTime = time;
     }
 
     fun soundEnd() {

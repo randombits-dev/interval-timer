@@ -49,6 +49,14 @@ class TimerFragment : Fragment() {
         // pauseTimer();
     }
 
+    override fun onDestroy() {
+        super.onDestroy();
+        // otherwise the countdown goes on after Back and crashes at the next phase, and a beep
+        // that has started plays to the end
+        timer?.stop();
+        mainActivity?.cancelAlarm();
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
