@@ -1,6 +1,7 @@
 package dev.randombits.intervaltimer
 
 import android.media.AudioAttributes
+import android.media.AudioManager
 import android.media.SoundPool
 import android.os.Bundle
 import android.os.SystemClock
@@ -25,6 +26,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_main);
+
+        // the beeps play as media, so let the hardware keys control media volume
+        // even between beeps, instead of the ringer volume on some phones
+        volumeControlStream = AudioManager.STREAM_MUSIC;
 
         val prefs = getSharedPreferences(packageName, MODE_PRIVATE);
         val activeTime = prefs.getInt("activeTime", 45);
