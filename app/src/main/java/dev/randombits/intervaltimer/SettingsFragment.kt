@@ -116,12 +116,12 @@ class SettingsFragment : Fragment() {
         }
         outState.putInt(
             "settings.activeTime",
-            Integer.parseInt(activeInput!!.text.toString())
+            activeInput!!.text.toString().toIntOrNull() ?: defaultActiveTime
         );
 
         outState.putInt(
             "settings.restTime",
-            Integer.parseInt(restInput!!.text.toString())
+            restInput!!.text.toString().toIntOrNull() ?: defaultRestTime
         );
 
         outState.putInt(
@@ -139,8 +139,8 @@ class SettingsFragment : Fragment() {
             return;
         }
         mainActivity!!.savePreferences(
-            Integer.parseInt(activeInput!!.text.toString()),
-            Integer.parseInt(restInput!!.text.toString()),
+            activeInput!!.text.toString().toIntOrNull() ?: defaultActiveTime,
+            restInput!!.text.toString().toIntOrNull() ?: defaultRestTime,
             setsInput!!.text.toString().toIntOrNull() ?: 0
         );
     }
@@ -158,8 +158,8 @@ class SettingsFragment : Fragment() {
     }
 
     private fun startTimer() {
-        var activeTime = Integer.parseInt(requireView().findViewById<EditText>(R.id.activeTime).text.toString());
-        var restTime = Integer.parseInt(requireView().findViewById<EditText>(R.id.restTime).text.toString());
+        var activeTime = requireView().findViewById<EditText>(R.id.activeTime).text.toString().toIntOrNull() ?: defaultActiveTime;
+        var restTime = requireView().findViewById<EditText>(R.id.restTime).text.toString().toIntOrNull() ?: defaultRestTime;
         val sets = requireView().findViewById<EditText>(R.id.setsCount).text.toString().toIntOrNull() ?: 0;
         if (activeTime < 5)
             activeTime = 5;
