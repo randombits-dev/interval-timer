@@ -41,6 +41,15 @@ class MainActivity : AppCompatActivity() {
         endSound = soundPool.load(this, R.raw.hit, 1);
     }
 
+    override fun onStart() {
+        super.onStart();
+        val prefs = getSharedPreferences(packageName, MODE_PRIVATE);
+        if (prefs.getBoolean("backToSettings", false)) {
+            prefs.edit().putBoolean("backToSettings", false).apply();
+            supportFragmentManager.popBackStack();
+        }
+    }
+
     fun startTimer(activeTime: Int, restTime: Int, sets: Int) {
         savePreferences(activeTime, restTime, sets);
         supportFragmentManager.beginTransaction()
@@ -49,7 +58,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun backToSettings() {
-        supportFragmentManager.popBackStack();
+        // the screens can't change while the app is in the background, where a workout can end,
+        // so it returns to the settings when the app comes back. This is kept in the preferences,
+        // as the activity may be recreated in the meantime and restore the timer screen.
+        if (supportFragmentManager.isStateSaved)
+            getSharedPreferences(packageName, MODE_PRIVATE).edit()
+                .putBoolean("backToSettings", true).apply();
+        else
+            supportFragmentManager.popBackStack();
     }
 
     fun savePreferences(activeTime: Int, restTime: Int, sets: Int) {
