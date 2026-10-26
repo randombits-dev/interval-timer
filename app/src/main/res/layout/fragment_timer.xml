@@ -40,8 +40,11 @@
             android:textSize="150sp"
             android:textAlignment="center" android:textStyle="bold"/>
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:orientation="horizontal" android:gravity="center">
+    <dev.randombits.intervaltimer.ControlRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
 
         <Button
                 android:id="@+id/pauseBtn"
@@ -68,6 +71,6 @@
                 android:layout_gravity="center"
                 android:contentDescription="@string/btn_stop"
                 android:background="@drawable/stop_circle_120"/>
-    </LinearLayout>
+    </dev.randombits.intervaltimer.ControlRow>
 
 </LinearLayout>
