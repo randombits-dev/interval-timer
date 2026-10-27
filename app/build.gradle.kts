@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "dev.randombits.intervaltimer"
-    compileSdk = 35
+    compileSdk = 36
 
     signingConfigs {
         create("release") {
@@ -22,9 +22,9 @@ android {
     defaultConfig {
         applicationId = "dev.randombits.intervaltimer"
         minSdk = 24
-        targetSdk = 35
-        versionCode = 14
-        versionName = "1.2.0"
+        targetSdk = 36
+        versionCode = 15
+        versionName = "1.2.1"
 
         vectorDrawables {
             useSupportLibrary = true

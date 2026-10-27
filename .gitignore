@@ -8,3 +8,4 @@
 .externalNativeBuild
 .cxx
 local.properties
+adi-registration.properties
