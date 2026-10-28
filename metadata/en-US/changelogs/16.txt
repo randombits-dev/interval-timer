@@ -1,0 +1,1 @@
+Scales UI to screen size and fixes several bugs.
