@@ -20,8 +20,8 @@
 
         <ImageButton
             android:id="@+id/activeTime_less"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/decrease_active_time"
             android:padding="16dp"
@@ -40,8 +40,8 @@
 
         <ImageButton
             android:id="@+id/activeTime_more"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/increase_active_time"
             android:padding="16dp"
@@ -61,8 +61,8 @@
 
         <ImageButton
             android:id="@+id/restTime_less"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/decrease_rest_time"
             android:padding="16dp"
@@ -80,8 +80,8 @@
 
         <ImageButton
             android:id="@+id/restTime_more"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/increase_rest_time"
             android:padding="16dp"
@@ -102,8 +102,8 @@
 
         <ImageButton
             android:id="@+id/sets_less"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/decrease_sets"
             android:padding="16dp"
@@ -122,8 +122,8 @@
 
         <ImageButton
             android:id="@+id/sets_more"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/increase_sets"
             android:padding="16dp"
